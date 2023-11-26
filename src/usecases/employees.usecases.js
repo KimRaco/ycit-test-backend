@@ -14,7 +14,7 @@ const createEmployee = async (userData) => {
 
   if (EmployeeExist) throw new Error('A user already exists with that email');
 
-  return User.create({ ...userData } );
+  return Employee.create({ ...userData } );
 };
 
 const updateEmployeeById = (userId, dataToUpdate) => {
@@ -26,7 +26,7 @@ const updateEmployeeById = (userId, dataToUpdate) => {
 };
 
 const deleteEmployeeById = (userId) => {
-  return User.findByIdAndDelete(userId);
+  return Employee.findByIdAndDelete(userId);
 };
 
 export {
