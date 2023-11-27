@@ -7,8 +7,12 @@ import cors from 'cors'
 const server = express();
 
 server.use(express.json());
-server.use(cors());
-server.options('*', cors());
+//server.use(cors());
+server.use(
+    cors({
+      origin: process.env.ORIGIN,
+    }),
+  )
 
 server.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://ycit-test-frontend.vercel.app');
